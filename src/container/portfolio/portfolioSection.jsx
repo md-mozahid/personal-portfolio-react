@@ -1,4 +1,4 @@
-import SinglePortfolio from './singlePortfolio'
+import Portfolio from './singlePortfolio'
 
 const array = [1, 2, 3]
 
@@ -13,7 +13,7 @@ const PortfolioSection = () => {
         </div>
         <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
           {array.map((item, index) => (
-            <SinglePortfolio key={index} item={item} />
+            <Portfolio key={index} item={item} />
           ))}
         </div>
         <button className="btn btn-outline flex-center mt-16 mx-auto">

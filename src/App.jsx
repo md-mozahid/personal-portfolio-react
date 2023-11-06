@@ -2,6 +2,7 @@ import NavbarSection from './container/navbar/navbar'
 import About from './pages/about'
 import Header from './pages/header'
 import Portfolio from './pages/portfolio'
+import Skill from './pages/skill'
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <About />
       <Portfolio />
+      <Skill />
     </>
   )
 }
