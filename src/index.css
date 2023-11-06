@@ -7,10 +7,10 @@
     @apply bg-slate-700 text-slate-50;
   }
   .head-text {
-    @apply text-5xl font-bold mb-16 text-center tracking-widest;
+    @apply text-center font-bold tracking-widest uppercase sm:text-5xl text-2xl mb-4;
   }
   .head-text-after {
-    @apply w-96 h-1 bg-slate-400 flex justify-center;
+    @apply w-28 h-1 bg-slate-400;
   }
   .title {
     @apply text-2xl tracking-widest mb-5 font-medium uppercase;

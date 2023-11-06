@@ -7,12 +7,12 @@ const NavbarSection = () => {
       <nav className="flex items-center justify-between py-4 px-5">
         {/* mobile menu */}
         <svg
-          class="block h-6 w-6 md:hidden"
+          className="block h-6 w-6 md:hidden"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth="1.5"
           stroke="currentColor"
-          ariaHidden="true"
+          aria-hidden="true"
         >
           <path
             strokeLinecap="round"
