@@ -5,6 +5,21 @@ const NavbarSection = () => {
   return (
     <div className="container mx-auto ">
       <nav className="flex items-center justify-between py-4 px-5">
+        {/* mobile menu */}
+        <svg
+          class="block h-6 w-6 md:hidden"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth="1.5"
+          stroke="currentColor"
+          ariaHidden="true"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+          />
+        </svg>
         <span className="text-3xl">
           <Link to="/">Logo</Link>
         </span>

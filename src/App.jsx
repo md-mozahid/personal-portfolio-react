@@ -1,4 +1,5 @@
 import NavbarSection from "./container/navbar/navbar";
+import About from "./pages/about";
 import Header from "./pages/header";
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <>
       <NavbarSection />
       <Header />
+      <About />
     </>
   );
 }
