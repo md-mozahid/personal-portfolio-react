@@ -1,7 +1,11 @@
+import NavbarSection from "./container/navbar/navbar";
+import Header from "./pages/header";
+
 function App() {
   return (
     <>
-      <div>Welcome React</div>
+      <NavbarSection />
+      <Header />
     </>
   );
 }
