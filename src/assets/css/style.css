@@ -1,7 +1,3 @@
 .hoverEffect:hover div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   bottom: 50%;
-  text-align: center;
 }
