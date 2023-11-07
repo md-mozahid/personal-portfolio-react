@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import { BsMoon, BsSun } from 'react-icons/bs'
 import { FaAlignJustify, FaXmark } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
@@ -6,6 +7,11 @@ import { useState } from 'react'
 
 const NavbarSection = () => {
   const [toggle, setToggle] = useState(false)
+  // const [theme, setTheme] = useState(false)
+
+  // const handleTheme = () => {
+  //   setTheme(!theme)
+  // }
   return (
     <div className="container mx-auto ">
       <nav className="flex items-center justify-between py-4 px-5">
@@ -14,9 +20,12 @@ const NavbarSection = () => {
           <FaAlignJustify onClick={() => setToggle(true)} />
 
           {toggle && (
-            <div className="fixed top-0 bottom-0 left-0 z-10 p-4 w-[80%] h-[100vh] flex items-end justify-end flex-col bg-slate-600">
+            <motion.div
+              className="fixed top-0 bottom-0 left-0 z-10 p-4 w-[80%] h-[100vh] flex items-end justify-end flex-col bg-slate-600"
+              whileInView={{ x: [-300, 0] }}
+              transition={{ duration: 0.5, ease: 'easeInOut' }}>
               <FaXmark onClick={() => setToggle(false)} />
-              <ul className="h-full w-full flex flex-col items-start justify-start space-x-4 uppercase">
+              <ul className="h-full w-full flex flex-col items-center justify-start mt-5 space-y-4 uppercase">
                 {[
                   'home',
                   'about',
@@ -30,7 +39,7 @@ const NavbarSection = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           )}
         </div>
 
@@ -39,7 +48,7 @@ const NavbarSection = () => {
         </span>
         <div className="flex-center">
           <div className="mr-3">
-            <BsMoon className="hidden cursor-pointer" />
+            <BsMoon className="text-2xl hidden cursor-pointer" />
             <BsSun className="text-2xl cursor-pointer" />
           </div>
           <button className="btn btn-outline">Hire Me</button>
