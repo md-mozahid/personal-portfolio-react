@@ -16,7 +16,7 @@ const NavbarSection = () => {
     <div className="container mx-auto ">
       <nav className="flex items-center justify-between py-4 px-5">
         {/* mobile menu */}
-        <div className="cursor-pointer z-30 relative">
+        <div className="cursor-pointer z-30 relative md:hidden">
           <FaAlignJustify onClick={() => setToggle(true)} />
 
           {toggle && (
@@ -42,10 +42,21 @@ const NavbarSection = () => {
             </motion.div>
           )}
         </div>
-
         <span className="text-3xl hidden md:block">
           <Link to="/">Logo</Link>
         </span>
+        <div className="hidden md:block">
+          <ul className="inline-flex space-x-4 uppercase">
+            {['home', 'about', 'skills', 'portfolio', 'client', 'contact'].map(
+              (item, index) => (
+                <li key={index}>
+                  <Link to={item}>{item}</Link>
+                </li>
+              )
+            )}
+          </ul>
+        </div>
+
         <div className="flex-center">
           <div className="mr-3">
             <BsMoon className="text-2xl hidden cursor-pointer" />

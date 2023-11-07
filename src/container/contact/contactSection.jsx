@@ -15,7 +15,7 @@ const ContactSection = () => {
           <div className="flex flex-wrap -m-2">
             <div className="p-2 w-1/2">
               <div className="relative">
-                <label for="name" className="leading-7 text-sm">
+                <label htmlFor="name" className="leading-7 text-sm">
                   Name
                 </label>
                 <input
@@ -28,7 +28,7 @@ const ContactSection = () => {
             </div>
             <div className="p-2 w-1/2">
               <div className="relative">
-                <label for="email" className="leading-7 text-sm ">
+                <label htmlFor="email" className="leading-7 text-sm ">
                   Email
                 </label>
                 <input
@@ -41,7 +41,7 @@ const ContactSection = () => {
             </div>
             <div className="p-2 w-full">
               <div className="relative">
-                <label for="message" className="leading-7 text-sm ">
+                <label htmlFor="message" className="leading-7 text-sm ">
                   Message
                 </label>
                 <textarea
