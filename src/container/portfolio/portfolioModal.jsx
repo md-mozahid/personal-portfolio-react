@@ -31,7 +31,7 @@ const PortfolioModal = ({ isOpen, setIsOpen, closeModal }) => {
                 leave="ease-in duration-500"
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-50">
-                <Dialog.Panel className="w-full max-w-xl p-6 transform overflow-hidden rounded-2xl bg-slate-700  text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-full  max-w-xs md:max-w-xl sm:max-w-md  p-6 transform overflow-hidden rounded-2xl bg-slate-700  text-left align-middle shadow-xl transition-all">
                   <div className="flex items-center justify-center flex-col relative">
                     <img
                       className="mb-5 object-cover object-center rounded-xl"

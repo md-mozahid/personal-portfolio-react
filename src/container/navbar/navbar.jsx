@@ -1,39 +1,42 @@
-import { Link } from "react-router-dom";
-import { BsMoon, BsSun } from "react-icons/bs";
+import { BsMoon, BsSun } from 'react-icons/bs'
+import { FaAlignJustify, FaXmark } from 'react-icons/fa6'
+import { Link } from 'react-router-dom'
+
+import { useState } from 'react'
 
 const NavbarSection = () => {
+  const [toggle, setToggle] = useState(false)
   return (
     <div className="container mx-auto ">
       <nav className="flex items-center justify-between py-4 px-5">
         {/* mobile menu */}
-        <svg
-          className="block h-6 w-6 md:hidden"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth="1.5"
-          stroke="currentColor"
-          aria-hidden="true"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-          />
-        </svg>
-        <span className="text-3xl">
+        <div className="cursor-pointer z-30 relative">
+          <FaAlignJustify onClick={() => setToggle(true)} />
+
+          {toggle && (
+            <div className="fixed top-0 bottom-0 left-0 z-10 p-4 w-[80%] h-[100vh] flex items-end justify-end flex-col bg-slate-600">
+              <FaXmark onClick={() => setToggle(false)} />
+              <ul className="h-full w-full flex flex-col items-start justify-start space-x-4 uppercase">
+                {[
+                  'home',
+                  'about',
+                  'skills',
+                  'portfolio',
+                  'client',
+                  'contact',
+                ].map((item, index) => (
+                  <li key={index}>
+                    <Link to={item}>{item}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+
+        <span className="text-3xl hidden md:block">
           <Link to="/">Logo</Link>
         </span>
-        <div className="hidden md:block">
-          <ul className="inline-flex space-x-4 uppercase">
-            {["home", "about", "skills", "portfolio", "client", "contact"].map(
-              (item, index) => (
-                <li key={index}>
-                  <Link to={item}>{item}</Link>
-                </li>
-              )
-            )}
-          </ul>
-        </div>
         <div className="flex-center">
           <div className="mr-3">
             <BsMoon className="hidden cursor-pointer" />
@@ -44,7 +47,7 @@ const NavbarSection = () => {
       </nav>
       <hr className="border-[] border-[#1e293b]" />
     </div>
-  );
-};
+  )
+}
 
-export default NavbarSection;
+export default NavbarSection
