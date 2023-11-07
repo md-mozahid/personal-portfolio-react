@@ -1,0 +1,98 @@
+.skill-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.skill-container {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+.skill-icon {
+  position: relative;
+  left: -50%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.skill-item {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid;
+  box-shadow: 0 0 0 4px #555, 0 0 0 6px #fff;
+  overflow: hidden;
+  z-index: 100;
+  transition: 0.5s;
+  transform: rotate(calc(360deg / 10 * var(--i)));
+  transform-origin: 340px;
+}
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: 0.5s;
+  transform: rotate(calc(-360deg / 10 * var(--i)));
+}
+
+.content {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content::before {
+  content: '';
+  position: absolute;
+  inset: 60px;
+  border: 4px solid transparent;
+  border-left: 4px solid #2196f3;
+  border-right: 4px solid #fff;
+  border-radius: 50%;
+  animation: animate01 5s linear infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes animate01 {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+.content::after {
+  content: '';
+  position: absolute;
+  inset: 100px;
+  border: 4px solid transparent;
+  border-left: 4px solid #ff1d50;
+  border-right: 4px solid #fff;
+  border-radius: 50%;
+  animation: animate02 2.5s linear infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes animate02 {
+  0% {
+    rotate: 360deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
+}

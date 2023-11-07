@@ -1,4 +1,5 @@
 import NavbarSection from './container/navbar/navbar'
+import Skills from './container/skill/skills'
 import About from './pages/about'
 import Contact from './pages/contact'
 import Header from './pages/header'
@@ -13,6 +14,7 @@ function App() {
       <About />
       <Portfolio />
       <Skill />
+      <Skills />
       <Contact />
     </>
   )
