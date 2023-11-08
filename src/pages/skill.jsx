@@ -1,11 +1,11 @@
-import SkillsSection from '../container/skill/skillsSection'
+import SwitchSkill from "../container/skill/skillsSection";
 
 const Skill = () => {
   return (
     <>
-      <SkillsSection />
+      <SwitchSkill />
     </>
-  )
-}
+  );
+};
 
-export default Skill
+export default Skill;

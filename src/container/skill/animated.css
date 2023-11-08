@@ -5,8 +5,8 @@
 }
 .skill-container {
   position: relative;
-  width: 600px;
-  height: 600px;
+  width: 500px;
+  height: 500px;
   border-radius: 50%;
   border: 1px solid #fff;
 }
@@ -23,8 +23,8 @@
 
 .skill-item {
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   border: 1px solid;
   box-shadow: 0 0 0 4px #555, 0 0 0 6px #fff;
@@ -32,7 +32,7 @@
   z-index: 100;
   transition: 0.5s;
   transform: rotate(calc(360deg / 10 * var(--i)));
-  transform-origin: 340px;
+  transform-origin: 290px;
 }
 .logo {
   position: absolute;

@@ -1,10 +1,9 @@
-import NavbarSection from './container/navbar/navbar'
-import Skills from './container/skill/skills'
-import About from './pages/about'
-import Contact from './pages/contact'
-import Header from './pages/header'
-import Portfolio from './pages/portfolio'
-import Skill from './pages/skill'
+import NavbarSection from "./container/navbar/navbar";
+import About from "./pages/about";
+import Contact from "./pages/contact";
+import Header from "./pages/header";
+import Portfolio from "./pages/portfolio";
+import Skill from "./pages/skill";
 
 function App() {
   return (
@@ -12,12 +11,11 @@ function App() {
       <NavbarSection />
       <Header />
       <About />
-      <Portfolio />
       <Skill />
-      <Skills />
+      <Portfolio />
       <Contact />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

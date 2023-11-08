@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { images } from '../../constants'
-import './skills.css'
+import './animated.css'
 
 const skillType = [
   { name: 'js', url: images.Js },
@@ -15,7 +15,7 @@ const skillType = [
   { name: 'youtube', url: images.Youtube },
 ]
 
-const Skills = () => {
+const AnimatedSkill = () => {
   let imgBox = useRef()
   let contentBox = useRef()
   console.log(imgBox)
@@ -223,4 +223,4 @@ const Skills = () => {
   )
 }
 
-export default Skills
+export default AnimatedSkill
