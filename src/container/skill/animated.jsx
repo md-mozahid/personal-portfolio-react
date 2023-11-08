@@ -18,9 +18,6 @@ const skillType = [
 const AnimatedSkill = () => {
   let imgBox = useRef()
   let contentBox = useRef()
-  console.log(imgBox)
-  console.log(contentBox)
-
   for (let i = 0; i < imgBox.length; i++) {
     imgBox.current[i].addEventListener('mouseover', function () {
       for (let i = 0; i < contentBox.length; i++) {

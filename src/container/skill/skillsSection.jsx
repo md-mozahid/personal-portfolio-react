@@ -7,6 +7,17 @@ const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 const SkillsSection = () => {
   const [enabled, setEnabled] = useState(false);
+  const [itemsSort, setItemsSort] = useState([
+    ...array.sort((b, a) => a.id - b.id),
+  ]);
+
+  let skillSlice;
+  if (array.length > 5) {
+    skillSlice = array.slice(0, 5);
+  } else {
+    skillSlice = itemsSort;
+  }
+
   return (
     <section className="">
       <div className="container px-5 py-24 mx-auto">
@@ -33,7 +44,7 @@ const SkillsSection = () => {
 
         {enabled ? (
           <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
-            {array.map((item, index) => (
+            {skillSlice.map((item, index) => (
               <SingleSkill key={index} item={item} />
             ))}
           </div>
