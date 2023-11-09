@@ -1,19 +1,20 @@
-import { motion } from 'framer-motion'
-import { BsMoon, BsSun } from 'react-icons/bs'
-import { FaAlignJustify, FaXmark } from 'react-icons/fa6'
-import { Link } from 'react-router-dom'
+import { motion } from "framer-motion";
+import { BsMoon, BsSun } from "react-icons/bs";
+import { FaAlignJustify, FaXmark } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
-import { useState } from 'react'
+import { useState } from "react";
+import './navbar.css'
 
 const NavbarSection = () => {
-  const [toggle, setToggle] = useState(false)
+  const [toggle, setToggle] = useState(false);
   // const [theme, setTheme] = useState(false)
 
   // const handleTheme = () => {
   //   setTheme(!theme)
   // }
   return (
-    <div className="container mx-auto ">
+    <div className="container mx-auto">
       <nav className="flex items-center justify-between py-4 px-5">
         {/* mobile menu */}
         <div className="cursor-pointer z-30 relative md:hidden">
@@ -23,16 +24,17 @@ const NavbarSection = () => {
             <motion.div
               className="fixed top-0 bottom-0 left-0 z-10 p-4 w-[80%] h-[100vh] flex items-end justify-end flex-col bg-slate-600"
               whileInView={{ x: [-300, 0] }}
-              transition={{ duration: 0.5, ease: 'easeInOut' }}>
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+            >
               <FaXmark onClick={() => setToggle(false)} />
               <ul className="h-full w-full flex flex-col items-center justify-start mt-5 space-y-4 uppercase">
                 {[
-                  'home',
-                  'about',
-                  'skills',
-                  'portfolio',
-                  'client',
-                  'contact',
+                  "home",
+                  "about",
+                  "skills",
+                  "portfolio",
+                  "client",
+                  "contact",
                 ].map((item, index) => (
                   <li key={index}>
                     <Link to={item}>{item}</Link>
@@ -45,16 +47,19 @@ const NavbarSection = () => {
         <span className="text-3xl hidden md:block">
           <Link to="/">Logo</Link>
         </span>
-        <div className="hidden md:block">
+        <div className="menu hidden md:block">
           <ul className="inline-flex space-x-4 uppercase">
-            {['home', 'about', 'skills', 'portfolio', 'client', 'contact'].map(
+            {["home", "about", "skills", "portfolio", "client", "contact"].map(
               (item, index) => (
                 <li key={index}>
-                  <Link to={item}>{item}</Link>
+                  <Link to={item}>
+                    <span>{item}</span>
+                  </Link>
                 </li>
               )
             )}
           </ul>
+          {/* <div className='w-4 m-auto h-1 bg-sky-600 flex justify-center items-center'></div> */}
         </div>
 
         <div className="flex-center">
@@ -67,7 +72,7 @@ const NavbarSection = () => {
       </nav>
       <hr className="border-[] border-[#1e293b]" />
     </div>
-  )
-}
+  );
+};
 
-export default NavbarSection
+export default NavbarSection;
