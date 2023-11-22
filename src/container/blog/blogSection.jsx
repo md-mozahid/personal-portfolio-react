@@ -1,6 +1,23 @@
-import SingleBlog from './singleBlog'
+import SingleBlog from "./singleBlog";
+import { getPosts } from "./blogApi";
+import { useEffect } from "react";
 
 const BlogSection = () => {
+
+  // fetch data
+  useEffect(() => {
+    const fetchData = async () => {
+      const posts = await getPosts();
+      console.log(posts);
+      return posts;
+    };
+    fetchData();
+  }, [getPosts]);
+
+  // console.log(posts);
+  // const {title} = posts
+  // console.log(name)
+
   return (
     <>
       <section className="">
@@ -16,7 +33,7 @@ const BlogSection = () => {
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default BlogSection
+export default BlogSection;
