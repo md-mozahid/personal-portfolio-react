@@ -1,20 +1,19 @@
 import { useState } from "react";
-import { Switch } from "@headlessui/react";
+// import { Switch } from "@headlessui/react";
 import SingleSkill from "./singleSkill";
 import FilterTab from "./filterTab";
 // import Animated from "./animated";
-
-const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+import { skills } from "../../data/skillsData";
 
 const SkillsSection = () => {
   const [enabled, setEnabled] = useState(true);
   const [itemsSort, setItemsSort] = useState([
-    ...array.sort((b, a) => a.id - b.id),
+    ...skills.sort((b, a) => b.id - a.id),
   ]);
 
   let skillSlice;
-  if (array.length > 5) {
-    skillSlice = array.slice(0, 7);
+  if (skills.length > 6) {
+    skillSlice = skills.slice(0, 6);
   } else {
     skillSlice = itemsSort;
   }
