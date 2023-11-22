@@ -1,22 +1,27 @@
-import { useState } from "react";
+import { useState } from 'react'
 // import { Switch } from "@headlessui/react";
-import SingleSkill from "./singleSkill";
-import FilterTab from "./filterTab";
+import FilterTab from './filterTab'
+import SingleSkill from './singleSkill'
 // import Animated from "./animated";
-import { skills } from "../../data/skillsData";
+import { skills } from '../../data/skillsData'
 
 const SkillsSection = () => {
-  const [enabled, setEnabled] = useState(true);
-  const [itemsSort, setItemsSort] = useState([
-    ...skills.sort((b, a) => b.id - a.id),
-  ]);
+  const [enabled, setEnabled] = useState(true)
+  // const [items, setItems] = useState([...skills.sort((b, a) => b.id - a.id)])
 
-  let skillSlice;
-  if (skills.length > 6) {
-    skillSlice = skills.slice(0, 6);
-  } else {
-    skillSlice = itemsSort;
+  const [filtered, setFiltered] = useState([
+    ...skills.sort((b, a) => b.id - a.id),
+  ])
+  const filterCategory = [...new Set(skills.map((cat) => cat.category))]
+
+  const handleFilter = (currentCategory) => {
+    const newItem = skills.filter((newItem) => {
+      return newItem.category === currentCategory
+    })
+    setFiltered(newItem)
   }
+
+ 
 
   return (
     <section className="">
@@ -44,12 +49,16 @@ const SkillsSection = () => {
         </div> */}
 
         {/* filter tab */}
-        <FilterTab />
+        <FilterTab
+          handleFilter={handleFilter}
+          filterCategory={filterCategory}
+        />
         {enabled ? (
           <div className="flex flex-wrap sm:m-4 mb-10 mt-4 gap-6">
-            {skillSlice.map((item, index) => (
+            {/* {skillSlice.map((item, index) => (
               <SingleSkill key={index} item={item} />
-            ))}
+              ))} */}
+            <SingleSkill filtered={filtered} />
           </div>
         ) : (
           <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
@@ -58,12 +67,14 @@ const SkillsSection = () => {
           </div>
         )}
 
-        <button className="btn btn-outline flex-center mt-16 mx-auto">
+        <button
+          className="btn btn-outline flex-center mt-16 mx-auto"
+          onClick={() => setFiltered(skills)}>
           Show More
         </button>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default SkillsSection;
+export default SkillsSection
