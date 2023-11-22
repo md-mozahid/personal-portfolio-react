@@ -1,23 +1,32 @@
-import NavbarSection from "./container/navbar/navbar";
-import About from "./pages/about";
-import Blog from "./pages/blog";
-import Client from "./pages/client";
-import Contact from "./pages/contact";
-import Header from "./pages/header";
-import Portfolio from "./pages/portfolio";
-import Skill from "./pages/skill";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./container/navbar/navbar";
+import {
+  About,
+  Blog,
+  Client,
+  Contact,
+  Header,
+  Home,
+  Portfolio,
+  PageNotFound,
+  Skill,
+} from "./pages";
 
 function App() {
   return (
     <>
-      <NavbarSection />
-      <Header />
-      <About />
-      <Skill />
-      <Portfolio />
-      <Blog />
-      <Client />
-      <Contact />
+      <Navbar />
+      <Routes>
+        <Route path="home" element={<Home />} />
+        <Route path="header" element={<Header />} />
+        <Route path="about" element={<About />} />
+        <Route path="skill" element={<Skill />} />
+        <Route path="portfolio" element={<Portfolio />} />
+        <Route path="blog" element={<Blog />} />
+        <Route path="client" element={<Client />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
     </>
   );
 }
