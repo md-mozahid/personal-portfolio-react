@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Switch } from "@headlessui/react";
 import SingleSkill from "./singleSkill";
+import FilterTab from "./filterTab";
 // import Animated from "./animated";
 
 const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -26,7 +27,8 @@ const SkillsSection = () => {
             My Skills
           </h2>
         </div>
-        <div className="pt-10 pb-20 text-center">
+        {/* toggle */}
+        {/* <div className="pt-10 pb-20 text-center">
           <Switch
             checked={enabled}
             onChange={setEnabled}
@@ -40,10 +42,12 @@ const SkillsSection = () => {
             pointer-events-none inline-block h-[34px] w-[34px] transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out`}
             />
           </Switch>
-        </div>
+        </div> */}
 
+        {/* filter tab */}
+        <FilterTab />
         {enabled ? (
-          <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6 gap-5">
+          <div className="flex flex-wrap sm:m-4 mb-10 mt-4 gap-6">
             {skillSlice.map((item, index) => (
               <SingleSkill key={index} item={item} />
             ))}
