@@ -1,19 +1,19 @@
 import { useState } from "react";
 import { Switch } from "@headlessui/react";
 import SingleSkill from "./singleSkill";
-import Animated from "./animated";
+// import Animated from "./animated";
 
 const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 const SkillsSection = () => {
-  const [enabled, setEnabled] = useState(false);
+  const [enabled, setEnabled] = useState(true);
   const [itemsSort, setItemsSort] = useState([
     ...array.sort((b, a) => a.id - b.id),
   ]);
 
   let skillSlice;
   if (array.length > 5) {
-    skillSlice = array.slice(0, 5);
+    skillSlice = array.slice(0, 7);
   } else {
     skillSlice = itemsSort;
   }
@@ -43,14 +43,15 @@ const SkillsSection = () => {
         </div>
 
         {enabled ? (
-          <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
+          <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6 gap-5">
             {skillSlice.map((item, index) => (
               <SingleSkill key={index} item={item} />
             ))}
           </div>
         ) : (
           <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
-            <Animated />
+            {/* <Animated /> */}
+            <h1 className="text-3xl">Updating...</h1>
           </div>
         )}
 

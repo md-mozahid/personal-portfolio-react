@@ -6,6 +6,9 @@
   body {
     @apply bg-slate-700 text-slate-50;
   }
+  .container {
+    @apply max-w-7xl
+  }
   .head-text {
     @apply text-center font-bold tracking-widest uppercase sm:text-5xl text-2xl mb-4;
   }
