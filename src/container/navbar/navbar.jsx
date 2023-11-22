@@ -24,17 +24,17 @@ const NavbarSection = () => {
             <motion.div
               className="fixed top-0 bottom-0 left-0 z-10 p-4 w-[80%] h-[100vh] flex items-end justify-end flex-col bg-slate-600"
               whileInView={{ x: [-300, 0] }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-            >
+              transition={{ duration: 0.5, ease: 'easeInOut' }}>
               <FaXmark onClick={() => setToggle(false)} />
               <ul className="h-full w-full flex flex-col items-center justify-start mt-5 space-y-4 uppercase">
                 {[
-                  "home",
-                  "about",
-                  "skills",
-                  "portfolio",
-                  "client",
-                  "contact",
+                  'home',
+                  'about',
+                  'skills',
+                  'portfolio',
+                  'Blog',
+                  'client',
+                  'contact',
                 ].map((item, index) => (
                   <li key={index}>
                     <Link to={item}>{item}</Link>
@@ -49,15 +49,21 @@ const NavbarSection = () => {
         </span>
         <div className="menu hidden md:block">
           <ul className="inline-flex space-x-4 uppercase">
-            {["home", "about", "skills", "portfolio", "client", "contact"].map(
-              (item, index) => (
-                <li key={index}>
-                  <Link to={item}>
-                    <span>{item}</span>
-                  </Link>
-                </li>
-              )
-            )}
+            {[
+              'home',
+              'about',
+              'skills',
+              'portfolio',
+              'Blog',
+              'client',
+              'contact',
+            ].map((item, index) => (
+              <li key={index}>
+                <Link to={item}>
+                  <span>{item}</span>
+                </Link>
+              </li>
+            ))}
           </ul>
           {/* <div className='w-4 m-auto h-1 bg-sky-600 flex justify-center items-center'></div> */}
         </div>
@@ -72,7 +78,7 @@ const NavbarSection = () => {
       </nav>
       <hr className="border-[] border-[#1e293b]" />
     </div>
-  );
+  )
 };
 
 export default NavbarSection;

@@ -1,5 +1,6 @@
 import NavbarSection from "./container/navbar/navbar";
 import About from "./pages/about";
+import Blog from "./pages/blog";
 import Client from "./pages/client";
 import Contact from "./pages/contact";
 import Header from "./pages/header";
@@ -14,6 +15,7 @@ function App() {
       <About />
       <Skill />
       <Portfolio />
+      <Blog />
       <Client />
       <Contact />
     </>
