@@ -1,11 +1,20 @@
-import { AnimatePresence, motion } from "framer-motion";
-import SingleClient from "./singleClient";
-import { useState } from "react";
-import Pagination from "../../components/pagination";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react'
 
-const array = [1, 2, 3, 4];
+import Pagination1 from '../../components/pagination'
+import SingleClient from './singleClient'
+
+// Import Swiper styles
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+
+// import required modules
+import { Autoplay, Navigation, Pagination } from 'swiper/modules'
+
+import { clientsData } from '../../data/clientData'
+
 const ClientSection = () => {
-  const [slide, setSlide] = useState(array);
   return (
     <div className="max-w-full">
       <div className="text-center mb-16">
@@ -14,24 +23,29 @@ const ClientSection = () => {
         </h2>
       </div>
 
-      {array.map((item, index) => (
-        <AnimatePresence key={index}>
-          {slide && (
-            <motion.div
-              key="modal"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            >
-              <SingleClient key={index} item={item} />
-            </motion.div>
-          )}
-        </AnimatePresence>
-      ))}
+      <Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        navigation={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mySwiper">
+        {clientsData.map((item, index) => (
+          <SwiperSlide key={index}>
+            <SingleClient item={item} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
 
-      <Pagination />
+      <Pagination1 />
     </div>
-  );
-};
+  )
+}
 
-export default ClientSection;
+export default ClientSection
