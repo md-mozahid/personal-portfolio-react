@@ -1,22 +1,18 @@
 import SingleBlog from "./singleBlog";
 import { getPosts } from "./blogApi";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const BlogSection = () => {
+  const [posts, setPosts] = useState([]);
 
   // fetch data
   useEffect(() => {
     const fetchData = async () => {
-      const posts = await getPosts();
-      console.log(posts);
-      return posts;
+      const data = await getPosts();
+      setPosts(data);
     };
     fetchData();
-  }, [getPosts]);
-
-  // console.log(posts);
-  // const {title} = posts
-  // console.log(name)
+  }, [posts]);
 
   return (
     <>
@@ -28,7 +24,7 @@ const BlogSection = () => {
             </h2>
           </div>
           <div className="flex flex-wrap -m-4">
-            <SingleBlog />
+            <SingleBlog posts={posts} />
           </div>
         </div>
       </section>
