@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import SingleClient from "./singleClient";
 import { useState } from "react";
+import Pagination from "../../components/pagination";
 
 const array = [1, 2, 3, 4];
 const ClientSection = () => {
@@ -28,17 +29,7 @@ const ClientSection = () => {
         </AnimatePresence>
       ))}
 
-      <div className="flex items-center justify-center py-10">
-        {[1, 2, 3, 4].map((item, index) => (
-          <a
-            key={index}
-            href="#"
-            className="mx-1 flex items-center rounded-md border border-gray-400 px-3 py-1 hover:scale-105"
-          >
-            {item}
-          </a>
-        ))}
-      </div>
+      <Pagination />
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import SingleBlog from "./singleBlog";
 import { getPosts } from "./blogApi";
 import { useEffect, useState } from "react";
+import Pagination from "../../components/pagination";
 
 const BlogSection = () => {
   const [posts, setPosts] = useState([]);
@@ -26,6 +27,7 @@ const BlogSection = () => {
           <div className="flex flex-wrap -m-4">
             <SingleBlog posts={posts} />
           </div>
+          <Pagination />
         </div>
       </section>
     </>
