@@ -4,16 +4,16 @@ import { useEffect, useState } from "react";
 import Pagination from "../../components/pagination";
 
 const BlogSection = () => {
-  const [posts, setPosts] = useState([]);
+  const [postData, setPostData] = useState([]);
 
   // fetch data
   useEffect(() => {
     const fetchData = async () => {
       const data = await getPosts();
-      setPosts(data);
+      setPostData(data);
     };
     fetchData();
-  }, [posts]);
+  }, [postData]);
 
   return (
     <>
@@ -25,7 +25,7 @@ const BlogSection = () => {
             </h2>
           </div>
           <div className="flex flex-wrap -m-4">
-            <SingleBlog posts={posts} />
+            <SingleBlog postData={postData} />
           </div>
           <Pagination />
         </div>

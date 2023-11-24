@@ -1,10 +1,12 @@
-const SingleBlog = ({ posts }) => {
+const SingleBlog = ({ postData }) => {
+
+  // console.log(postData.posts)
   // post slice
   let postSlice;
-  if (posts.length > 6) {
-    postSlice = posts.slice(0, 6);
+  if (postData.length > 5) {
+    postSlice = postData.slice(0, 6)
   } else {
-    postSlice = posts;
+    postSlice = postData
   }
 
   return (
@@ -16,11 +18,10 @@ const SingleBlog = ({ posts }) => {
               CATEGORY
             </h2>
             <h1 className="title-font sm:text-2xl text-xl font-medium mb-3">
-              Raclette Blueberry Nextious Level
+              {post.title}
             </h1>
             <p className="leading-relaxed mb-3">
-              Photo booth fam kinfolk cold-pressed sriracha leggings jianbing
-              microdosing tousled waistcoat.
+              {post.body}
             </p>
             <a className="text-indigo-500 inline-flex items-center">
               Learn More
