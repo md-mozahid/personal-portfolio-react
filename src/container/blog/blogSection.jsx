@@ -1,19 +1,19 @@
-import SingleBlog from "./singleBlog";
-import { getPosts } from "./blogApi";
-import { useEffect, useState } from "react";
-import Pagination from "../../components/pagination";
+import { useEffect, useState } from 'react'
+import Pagination from '../../components/pagination'
+import { getPosts } from './blogApi'
+import SingleBlog from './singleBlog'
 
 const BlogSection = () => {
-  const [postData, setPostData] = useState([]);
+  const [postData, setPostData] = useState([])
 
   // fetch data
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getPosts();
-      setPostData(data);
-    };
-    fetchData();
-  }, [postData]);
+      const data = await getPosts()
+      setPostData(data)
+    }
+    fetchData()
+  }, [postData])
 
   return (
     <>
@@ -31,7 +31,7 @@ const BlogSection = () => {
         </div>
       </section>
     </>
-  );
-};
+  )
+}
 
-export default BlogSection;
+export default BlogSection
